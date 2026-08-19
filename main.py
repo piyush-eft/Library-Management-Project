@@ -7,8 +7,33 @@ from datetime import datetime
 
 class Library:
 
+    def gen_id(Prefix ="B"):
+        random_id =""
+        for i in range(5):
+            random_id += random.choice(string.ascii_uppercase + string.digits)
+
+        return Prefix + "-" + random_id
+
+
+
+
     def add_book(self):
-        
+        title = input("What is the title of the book :-")
+        author = input("Who is the author of the book :=")
+        copies = int(input("How many copies do you have :-"))
+
+        book = {
+
+            "Id" : Library.gen_id(),
+            "Title" : title,
+            "Author" : author,
+            "Total_copies" : copies,
+            "Available_copies" : copies,
+            "Add_on" : datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        }
+
+        print(book)
 
 
 
@@ -17,8 +42,7 @@ class Library:
 
 
 
-
-
+hello =Library()
 
 
 
@@ -36,3 +60,5 @@ print("-"*50)
 
 choice = int(input("Please tell which task you want to perform"))
 
+if choice ==1:
+    hello.add_book()
