@@ -55,10 +55,41 @@ class Library:
         Library.data['books'].append(book)
         Library.save_data()
 
+    def list_books(self):
+        if not Library.data['books']:
+            print("Sorry No books found")
+            return
+        for b in Library.data['books']:
+            print(f"{b['Id']:12} {b['Title'][:24]:25} {b['Author'][:19]:20} {b['Total_copies']}/{b['Available_copies']:>3}")
 
+        print()
+    def add_member(self):
+        name = input("Enter your name :-")
+        email = input("Enter your email :-")
 
+        member = {
+            "Id" : Library.gen_id("M"),
+            "Name" : name,
+            "E-mail" : email,
+            "Borowed" : []
+        }
+        Library.data['members'].append(member)
+        Library.save_data()
+        print("Member added successfully")
 
+    
 
+    def list_members(self):
+        if not Library.data['members']:
+            print("There are no members found")
+            return
+        for m in Library.data['members']:
+            print(f"{m['Id']:12} {m['Name'][:24]:25} {m['E-mail'][:29]:30}")
+            print("This guy has borrowed")
+            print(f"{m['Borowed']}")
+
+        print()
+        
 
 
 
@@ -82,3 +113,12 @@ choice = int(input("Please tell which task you want to perform"))
 
 if choice ==1:
     hello.add_book()
+
+if choice ==2:
+    hello.list_books()
+
+if choice==3:
+    hello.add_member()
+
+if choice==4:
+    hello.list_members()
