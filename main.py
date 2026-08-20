@@ -7,6 +7,20 @@ from datetime import datetime
 
 class Library:
 
+    database = "library.json"
+    data = {"books": [], "members":[]}
+
+    # LOAD EXISTING DATA TO JSON FILE OR CREATE YOUR JSON
+    if Path(database).exists():
+        with open(database,"r") as f:
+            content = f.read().strip()
+            if content:
+                data = json.loads(content)
+    else:
+        with open(database,'w') as f:
+            json.dump(data,f,indent=4)
+
+
     def gen_id(Prefix ="B"):
         random_id =""
         for i in range(5):
@@ -33,7 +47,7 @@ class Library:
 
         }
 
-        print(book)
+        Library.data['books'].append(book)
 
 
 
