@@ -1,0 +1,21 @@
+{
+    "books": [
+        {
+            "Id": "B-EMCVE",
+            "Title": "Bhagvat gita",
+            "Author": "Shri Krishna",
+            "Total_copies": 20,
+            "Available_copies": 20,
+            "Add_on": "2026-08-20 22:23:52"
+        },
+        {
+            "Id": "B-PLB2B",
+            "Title": "Game of Thrones",
+            "Author": "George R. R. Martin",
+            "Total_copies": 5,
+            "Available_copies": 5,
+            "Add_on": "2026-08-20 22:25:36"
+        }
+    ],
+    "members": []
+}

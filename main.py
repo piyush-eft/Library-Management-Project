@@ -29,6 +29,11 @@ class Library:
         return Prefix + "-" + random_id
 
 
+    @classmethod
+    def save_data(cls):
+        with open(cls.database,'w') as f:
+            json.dump(cls.data,f,indent=4,default=str)
+
 
 
     def add_book(self):
@@ -48,6 +53,7 @@ class Library:
         }
 
         Library.data['books'].append(book)
+        Library.save_data()
 
 
 
