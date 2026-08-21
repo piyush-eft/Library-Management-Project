@@ -5,6 +5,7 @@ A simple Library Management System built in Python — available in two versions
 1. **Terminal version** — a menu-driven CLI app using plain `input()`
 2. **Web UI version** — the same core logic rebuilt with [Streamlit](https://streamlit.io) for a browser-based interface
 
+-> NOTE: WEB UI Version code has been entirely written by Claude. I only wrote the Terminal code(main.py)
 Both versions store data locally in a `library.json` file, so your data persists between runs.
 
 ---
